@@ -7,16 +7,24 @@ def lab1Question1(input_gb):
 
     return num_bytes
 
+gigabytes = 10
+num_bytes = gigabytes * 1024
+print(num_bytes)
+
+
 
 def lab1Question2(name):
     # Take an input of a name, return True if there is an odd number of characters in the name, False otherwise
     # Return None if the input is not a string
 
 my_name = 'Marci'
+# if my_name type is not string, then return "None" 
 if type(my_name) != 'str':
     print('None')
+# if false (my_name is string) then test to see if it's odd and print "True" if true.
 elif len(my_name) % 2 != 0:
      print('True')
+# if my_name is even, then print "False"
 else:
     print('False')
 
