@@ -5,31 +5,23 @@ def lab1Question1(input_gb):
     # The solution to this goes here (and in all of them below...)
     # Set the variable num_bytes to the answer and return it
 
+    num_bytes = input_gb * 1024**3
+
     return num_bytes
-
-gigabytes = 10
-num_bytes = gigabytes * 1024
-print(num_bytes)
-
 
 
 def lab1Question2(name):
     # Take an input of a name, return True if there is an odd number of characters in the name, False otherwise
     # Return None if the input is not a string
 
-my_name = 'Marci'
-# if my_name type is not string, then return "None" 
-if type(my_name) != 'str':
-    print('None')
-# if false (my_name is string) then test to see if it's odd and print "True" if true.
-elif len(my_name) % 2 != 0:
-     print('True')
-# if my_name is even, then print "False"
-else:
-    print('False')
-
-    is_odd = None
-
+    try:
+        if len(name) % 2 != 0:
+            is_odd = 'True'
+        else:
+            is_odd = 'False'
+    except TypeError: 
+        is_odd = 'None'
+        
     return is_odd
 
 
@@ -37,35 +29,45 @@ def lab1Question3(input_string, input_number):
     # Take in two inputs - a string and a number
     # Return the character of the string in the index given by number.  If this index does not exist, then return -1.
 
-number = 7
-string = 'I love Python sooooo much'
-
-
-
-    character_at = -1
+    try:
+        character_at = print(input_string[input_number])
+    except IndexError:
+        character_at = -1
 
     return character_at
+
 
 def lab1Question4(file_name):
     # Take an input of a file name. 
     # Read that file and return a list of all numbers in that file
+    
     list_of_nums = []
-
+    file = open(file_name, 'r')
+    information = file.readlines()
+    for each_line in information:
+        list_of_nums.append(int(each_line))
+    
     return list_of_nums
+
 
 def lab1Question5(list_numbers):
     # Take an input of a list of numbers
     # Return the mode from that list. 
-    mode_of_list = None
+    
+    mode_of_list = mode(list_numbers)
 
     return mode_of_list
+
 
 def lab1Question6(quarters, dimes, nickels, pennies):
     # Take in 4 inputs - the number of quarters, dimes, nickels, and pennies in a handful
     # Return the total amount in dollars
     # For example, if the handful contains 4 quarters, 3 dimes, 2 nickels, and 1 penny, the function should return 1.41.
-    total = None
+    
+    total = (quarters * 0.25) + (dimes * 0.10) + (nickels * 0.05) + (pennies * 0.01)
+    
     return total
+
 
 ## Example of calling a function to test these... 
 # Question 1 Check:
