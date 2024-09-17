@@ -54,7 +54,7 @@ def lab1Question5(list_numbers):
     # Take an input of a list of numbers
     # Return the mode from that list. 
     
-    from statistics import mode 
+    import pandas as pd
     mode_of_list = mode([list_numbers])
 
     return mode_of_list
